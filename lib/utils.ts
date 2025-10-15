@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { TaskStatus, TaskPriority, ProjectCategory } from "./types";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -21,7 +22,7 @@ export function formatDate(dateString: string | null): string {
   return date.toLocaleDateString('es-PY', { month: 'short', day: 'numeric' });
 }
 
-export function getStatusColor(status: string): string {
+export function getStatusColor(status: TaskStatus): string {
   switch (status) {
     case 'pendiente':
       return 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300';
@@ -34,7 +35,7 @@ export function getStatusColor(status: string): string {
   }
 }
 
-export function getPriorityColor(priority: string): string {
+export function getPriorityColor(priority: TaskPriority): string {
   switch (priority) {
     case 'baja':
       return 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300';
@@ -49,7 +50,7 @@ export function getPriorityColor(priority: string): string {
   }
 }
 
-export function getCategoryLabel(category: string): string {
+export function getCategoryLabel(category: ProjectCategory): string {
   switch (category) {
     case 'paneles_acusticos':
       return 'Paneles Acústicos';
@@ -64,7 +65,7 @@ export function getCategoryLabel(category: string): string {
   }
 }
 
-export function getStatusLabel(status: string): string {
+export function getStatusLabel(status: TaskStatus): string {
   switch (status) {
     case 'pendiente':
       return 'Pendiente';
@@ -77,7 +78,7 @@ export function getStatusLabel(status: string): string {
   }
 }
 
-export function getPriorityLabel(priority: string): string {
+export function getPriorityLabel(priority: TaskPriority): string {
   switch (priority) {
     case 'baja':
       return 'Baja';
