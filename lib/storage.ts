@@ -9,7 +9,7 @@ export const storage = {
   getTasks: (): Task[] => {
     if (typeof window === 'undefined') return initialTasks;
     const stored = localStorage.getItem(TASKS_KEY);
-    return stored ? JSON.parse(stored) : initialTasks;
+    return stored ? (JSON.parse(stored) as Task[]) : initialTasks;
   },
 
   saveTasks: (tasks: Task[]): void => {
@@ -20,7 +20,7 @@ export const storage = {
   getTeamMembers: (): TeamMember[] => {
     if (typeof window === 'undefined') return initialTeamMembers;
     const stored = localStorage.getItem(TEAM_KEY);
-    return stored ? JSON.parse(stored) : initialTeamMembers;
+    return stored ? (JSON.parse(stored) as TeamMember[]) : initialTeamMembers;
   },
 
   saveTeamMembers: (members: TeamMember[]): void => {
@@ -31,7 +31,7 @@ export const storage = {
   getKPIs: (): KPI[] => {
     if (typeof window === 'undefined') return initialKPIs;
     const stored = localStorage.getItem(KPI_KEY);
-    return stored ? JSON.parse(stored) : initialKPIs;
+    return stored ? (JSON.parse(stored) as KPI[]) : initialKPIs;
   },
 
   saveKPIs: (kpis: KPI[]): void => {
