@@ -59,7 +59,7 @@ export default function TasksPage() {
     setIsModalOpen(true);
   };
 
-  const todoTasks = tasks.filter((t) => t.status === 'pendiente');
+  const pendingTasks = tasks.filter((t) => t.status === 'pendiente');
   const inProgressTasks = tasks.filter((t) => t.status === 'en_progreso');
   const doneTasks = tasks.filter((t) => t.status === 'completado');
 
@@ -123,11 +123,11 @@ export default function TasksPage() {
                 <div className="mb-4 flex items-center justify-between">
                   <h3 className="font-semibold text-gray-900 dark:text-white">Pendientes</h3>
                   <span className="rounded-full bg-gray-200 dark:bg-gray-800 px-2 py-1 text-xs font-medium">
-                    {todoTasks.length}
+                    {pendingTasks.length}
                   </span>
                 </div>
                 <div className="space-y-3">
-                  {todoTasks.map((task) => (
+                  {pendingTasks.map((task) => (
                     <TaskCard
                       key={task.id}
                       task={task}

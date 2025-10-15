@@ -22,7 +22,7 @@ export default function Dashboard() {
 
   const stats = {
     total: tasks.length,
-    todo: tasks.filter((t) => t.status === 'pendiente').length,
+    pending: tasks.filter((t) => t.status === 'pendiente').length,
     inProgress: tasks.filter((t) => t.status === 'en_progreso').length,
     done: tasks.filter((t) => t.status === 'completado').length,
   };
@@ -52,7 +52,7 @@ export default function Dashboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Pendientes</p>
-                  <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">{stats.todo}</p>
+                  <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">{stats.pending}</p>
                 </div>
                 <div className="rounded-full bg-gray-100 dark:bg-gray-800 p-3">
                   <AlertCircle className="h-6 w-6 text-gray-600 dark:text-gray-400" />

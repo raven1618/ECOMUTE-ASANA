@@ -20,7 +20,7 @@ export default function TeamPage() {
     const memberTasks = tasks.filter((t) => t.assigneeId === memberId);
     return {
       total: memberTasks.length,
-      todo: memberTasks.filter((t) => t.status === 'pendiente').length,
+      pending: memberTasks.filter((t) => t.status === 'pendiente').length,
       inProgress: memberTasks.filter((t) => t.status === 'en_progreso').length,
       done: memberTasks.filter((t) => t.status === 'completado').length,
     };
