@@ -41,7 +41,7 @@ export default function TasksPage() {
         status: taskData.status || 'pendiente',
         priority: taskData.priority || 'media',
         assigneeId: taskData.assigneeId || null,
-        projectCategory: taskData.projectCategory || 'composite_solution',
+        projectCategory: taskData.projectCategory || 'solucion_integral',
         dueDate: taskData.dueDate || null,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
